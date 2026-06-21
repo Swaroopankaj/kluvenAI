@@ -26,6 +26,7 @@ import { AppNode } from '@/nodes/types';
 import { edgeTypes } from '../edges';
 import { nodeTypes } from '../nodes';
 import { TooltipProvider } from './ui/tooltip';
+import { CustomControls } from './custom-controls';
 
 type FlowProps = {
   className?: string;
@@ -236,6 +237,13 @@ export function Flow({ className = '' }: FlowProps) {
     }
   }, [isInitialized]);
 
+  // Fit view to show all nodes
+  const { reactFlowInstance } = useFlowContext();
+
+  const fitView = useCallback(() => {
+    reactFlowInstance.fitView({ padding: 0.2, duration: 500 });
+  }, [reactFlowInstance]);
+
   // Connect two nodes with marker
   const onConnect = useCallback(
     (connection: Connection) => {
@@ -305,7 +313,7 @@ export function Flow({ className = '' }: FlowProps) {
             color={gridColor}
             style={backgroundStyle}
           />
-          {/* <CustomControls onReset={resetFlow} /> */}
+          <CustomControls onReset={() => {}} onFitView={fitView} />
         </ReactFlow>
       </TooltipProvider>
     </div>
