@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: kluvenai-backend
+    runtime: python
+    repo: https://github.com/Swaroopankaj/kluvenAI
+    branch: master
+    buildCommand: pip install -r app/backend/requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    workingDir: app/backend
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://kluvenai.agenticworkflow.space
