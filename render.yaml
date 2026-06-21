@@ -5,8 +5,7 @@ services:
     repo: https://github.com/Swaroopankaj/kluvenAI
     branch: master
     buildCommand: pip install -r app/backend/requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    workingDir: app/backend
+    startCommand: cd app/backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: OPENROUTER_API_KEY
         sync: false
