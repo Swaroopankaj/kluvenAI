@@ -1,0 +1,70 @@
+{
+  "app": {
+    "name": "kluvenAI",
+    "tagline": "Swedish admin, automated"
+  },
+  "topbar": {
+    "toggleLeft": "Toggle left sidebar",
+    "toggleBottom": "Toggle bottom panel",
+    "toggleRight": "Toggle right sidebar",
+    "settings": "Settings"
+  },
+  "nodes": {
+    "sambosplit": {
+      "name": "SamboSplit",
+      "description": "Split household bills 50/50",
+      "tagline": "Upload your electricity, broadband or ICA receipts and split 50/50 directly with Swish."
+    },
+    "vablogger": {
+      "name": "VAB Auto-Log",
+      "description": "Log sick child leave to HR & Försäkringskassan",
+      "tagline": "Upload doctor's note or preschool notification and generate a VAB report for HR."
+    },
+    "commuter": {
+      "name": "SL Commuter",
+      "description": "Extract transit receipts for work reimbursement",
+      "tagline": "Upload your SL/Västtrafik receipts and get an expense report for work."
+    }
+  },
+  "nodes": {
+    "vabagent": {
+      "name": "VAB Agent",
+      "description": "AI-powered VAB processing",
+      "tagline": "AI extracts sick child data from documents and prepares FK, HR & school exports."
+    },
+    "llmagent": {
+      "name": "LLM Agent",
+      "description": "General-purpose LLM agent",
+      "tagline": "Ask questions about VAB, SamboSplit, and Swedish admin workflows."
+    }
+  },
+  "sidebar": {
+    "left": {
+      "title": "Workflows",
+      "newFlow": "New workflow",
+      "search": "Search workflows...",
+      "empty": "No workflows yet"
+    },
+    "right": {
+      "title": "Components",
+      "search": "Search components...",
+      "startNodes": "Start Nodes",
+      "actions": "Actions",
+      "endNodes": "End Nodes"
+    }
+  },
+  "bottom": {
+    "output": "Output",
+    "noOutput": "Run a workflow to see output here"
+  },
+  "tabs": {
+    "untitled": "Untitled workflow",
+    "close": "Close"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "theme": "Theme",
+    "language": "Language"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "app": {
+    "name": "kluvenAI",
+    "tagline": "Svensk administration, automatiserad"
+  },
+  "topbar": {
+    "toggleLeft": "Växla vänster sidofält",
+    "toggleBottom": "Växla bottenpanel",
+    "toggleRight": "Växla höger sidofält",
+    "settings": "Inställningar"
+  },
+  "nodes": {
+    "sambosplit": {
+      "name": "SamboSplit",
+      "description": "Dela hushållsräkningar 50/50",
+      "tagline": "Ladda upp dina el-, bredbands- eller ICA-kvitton och dela 50/50 direkt med Swish."
+    },
+    "vablogger": {
+      "name": "VAB Auto-Log",
+      "description": "Logga VAB till HR & Försäkringskassan",
+      "tagline": "Ladda upp läkarintyg eller förskolans meddelande och generera en VAB-rapport för HR."
+    },
+    "commuter": {
+      "name": "SL Pendling",
+      "description": "Extrahera resekvitton för jobbresor",
+      "tagline": "Ladda upp dina SL/Västtrafik-kvitton och få en expensrapport för jobbet."
+    }
+  },
+  "nodes": {
+    "vabagent": {
+      "name": "VAB Agent",
+      "description": "AI-driven VAB-hantering",
+      "tagline": "AI extraherar sjukbarnsdata från dokument och förbereder FK-, HR- och skolexporter."
+    },
+    "llmagent": {
+      "name": "LLM Agent",
+      "description": "Allmän LLM-agent",
+      "tagline": "Ställ frågor om VAB, SamboSplit och svenska admin-arbetsflöden."
+    }
+  },
+  "sidebar": {
+    "left": {
+      "title": "Arbetsflöden",
+      "newFlow": "Nytt arbetsflöde",
+      "search": "Sök arbetsflöden...",
+      "empty": "Inga arbetsflöden än"
+    },
+    "right": {
+      "title": "Komponenter",
+      "search": "Sök komponenter...",
+      "startNodes": "Startnoder",
+      "actions": "Åtgärder",
+      "endNodes": "Slutnoder"
+    }
+  },
+  "bottom": {
+    "output": "Utdata",
+    "noOutput": "Kör ett arbetsflöde för att se utdata här"
+  },
+  "tabs": {
+    "untitled": "Namnlöst arbetsflöde",
+    "close": "Stäng"
+  },
+  "settings": {
+    "title": "Inställningar",
+    "appearance": "Utseende",
+    "theme": "Tema",
+    "language": "Språk"
+  }
+}

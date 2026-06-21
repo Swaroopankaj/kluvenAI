@@ -1,0 +1,70 @@
+{
+  "config": {
+    "id": "vablogger",
+    "title": "VAB Auto-Log",
+    "description": "Log sick child leave to HR & Försäkringskassan",
+    "version": "1.0.0",
+    "fields": [
+      {
+        "key": "child_name",
+        "label": "Child Name",
+        "type": "string",
+        "description": "Full name of the sick child",
+        "required": true
+      },
+      {
+        "key": "start_date",
+        "label": "Start Date",
+        "type": "date",
+        "description": "First day of VAB",
+        "required": true
+      },
+      {
+        "key": "end_date",
+        "label": "End Date",
+        "type": "date",
+        "description": "Last day of VAB",
+        "required": true
+      },
+      {
+        "key": "total_hours_vab",
+        "label": "Total VAB Hours",
+        "type": "number",
+        "description": "Total hours of VAB claimed (1-24 per day)",
+        "required": true
+      }
+    ],
+    "ai": {
+      "task_description": "Read the sick child notice, doctor's note, or preschool absence confirmation. Extract the child's full name, start date, end date, and total hours of VAB (vård av barn). Dates must be in YYYY-MM-DD format. Hours must be a number. Output ONLY valid JSON with these exact keys: child_name, start_date, end_date, total_hours_vab.",
+      "model": "openrouter/openrouter/free",
+      "max_tokens": 1024
+    },
+    "exports": [
+      {
+        "type": "csv",
+        "label": "Payroll CSV",
+        "filename_template": "vab_{{child_name}}_{{start_date}}.csv",
+        "columns": ["child_name", "start_date", "end_date", "total_hours_vab"],
+        "description": "HR-friendly CSV for payroll systems"
+      },
+      {
+        "type": "clipboard",
+        "label": "FK Copy-Paste",
+        "template": "Child: {{child_name}}\nPeriod: {{start_date}} \u2013 {{end_date}}\nTotal VAB hours: {{total_hours_vab}}\n\nSubmitted via kluvenAI",
+        "description": "Pre-formatted text for F\u00f6rs\u00e4kringskassan BankID form"
+      },
+      {
+        "type": "clipboard",
+        "label": "School Notification",
+        "template": "Hej,\n\n{{child_name}} \u00e4r sjuk och kommer vara hemma fr\u00e5n {{start_date}} till {{end_date}}.\nVAB anm\u00e4ls enligt rutin.\n\nMed v\u00e4nlig h\u00e4lsning",
+        "description": "Pre-written message for preschool/school portal"
+      }
+    ],
+    "post_processing": {
+      "validate_dates": true,
+      "validate_hours_range": [1, 24],
+      "auto_calculate_hours": false,
+      "multiple_children_support": false
+    }
+  }
+}
