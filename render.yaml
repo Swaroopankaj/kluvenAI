@@ -4,7 +4,8 @@ services:
     runtime: python
     repo: https://github.com/Swaroopankaj/kluvenAI
     branch: master
-    buildCommand: pip install -r app/backend/requirements.txt
+    buildCommand: |
+      cd app/backend && pip install -r requirements.txt
     startCommand: cd app/backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: OPENROUTER_API_KEY
